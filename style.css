@@ -1,0 +1,243 @@
+/* ============================================
+   CALCULADORA - CSS
+   Tema: Verde-Roxo
+   Estrutura baseada no tutorial do YouTube
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, rgba(34, 139, 34, 1) 0%, rgba(75, 0, 130, 1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* ============================================
+   CALCULADORA CONTAINER
+   ============================================ */
+.calculator {
+    background-color: white;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   DISPLAY
+   ============================================ */
+#display {
+    width: 100%;
+    height: 60px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    color: #333;
+    font-size: 1.5rem;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 15px;
+    outline: none;
+    font-weight: bold;
+}
+
+#display::placeholder {
+    color: #999;
+}
+
+/* ============================================
+   GRADE DE BOTÕES
+   ============================================ */
+.box-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+/* ============================================
+   BOTÕES
+   ============================================ */
+button {
+    height: 60px;
+    border: none;
+    border-radius: 8px;
+    background-color: #e8e8e8;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s;
+    border: 2px solid #d0d0d0;
+}
+
+button:hover {
+    background-color: #e1e1e1;
+    border-color: #228B22;
+    box-shadow: 0 0 10px rgba(34, 139, 34, 0.3);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* ============================================
+   BOTÃO ZERO (EXPANDE 2 COLUNAS)
+   ============================================ */
+.btn-zero {
+    grid-column: 1 / 3;
+}
+
+/* ============================================
+   BOTÃO RESULTADO (EXPANDE 2 LINHAS)
+   ============================================ */
+.btn-result {
+    background-color: #228B22;
+    color: white;
+    border-color: #1a6b1a;
+    grid-row: 4 / 6;
+}
+
+.btn-result:hover {
+    background-color: #2ecc71;
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.5);
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+
+/* Tablet (768px) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    
+    .calculator {
+        max-width: 280px;
+        padding: 15px;
+    }
+    
+    #display {
+        height: 50px;
+        font-size: 1.3rem;
+        padding: 8px;
+    }
+    
+    button {
+        height: 50px;
+        font-size: 1rem;
+    }
+    
+    .box-buttons {
+        gap: 8px;
+    }
+}
+
+/* Mobile Grande (600px) */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .calculator {
+        max-width: 260px;
+        padding: 12px;
+    }
+    
+    #display {
+        height: 45px;
+        font-size: 1.1rem;
+        padding: 6px;
+        margin-bottom: 10px;
+    }
+    
+    button {
+        height: 45px;
+        font-size: 0.9rem;
+    }
+    
+    .box-buttons {
+        gap: 6px;
+    }
+}
+
+/* Mobile Pequeno (480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .calculator {
+        max-width: 240px;
+        padding: 10px;
+    }
+    
+    #display {
+        height: 40px;
+        font-size: 1rem;
+        padding: 5px;
+        margin-bottom: 8px;
+    }
+    
+    button {
+        height: 40px;
+        font-size: 0.8rem;
+    }
+    
+    .box-buttons {
+        gap: 5px;
+    }
+}
+
+/* Mobile Extra Pequeno (360px) */
+@media (max-width: 360px) {
+    h1 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+    
+    .calculator {
+        max-width: 220px;
+        padding: 8px;
+    }
+    
+    #display {
+        height: 35px;
+        font-size: 0.9rem;
+        padding: 4px;
+        margin-bottom: 6px;
+    }
+    
+    button {
+        height: 35px;
+        font-size: 0.7rem;
+    }
+    
+    .box-buttons {
+        gap: 4px;
+    }
+}
